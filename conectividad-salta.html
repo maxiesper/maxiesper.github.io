@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brecha Digital en Salta — Maximiliano Esper</title>
+<meta name="description" content="Dashboard de Power BI que mide la brecha digital en 23 departamentos de Salta, con un índice compuesto propio (IBDD).">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a href="index.html" class="site-name">Maximiliano Esper</a>
+    <nav class="site">
+      <a href="index.html#proyectos">Proyectos</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<section class="project-hero">
+  <div class="wrap">
+    <a href="index.html#proyectos" class="back-link">← Proyectos</a>
+    <p class="eyebrow">Power BI</p>
+    <h1 class="project-hero-title">Brecha Digital en Salta</h1>
+    <p class="hero-sub">Un dashboard público que mide, departamento por departamento, qué tan real es la conectividad en Salta — y qué tan distinto es eso de lo que dicen los promedios oficiales.</p>
+
+    <div class="facts">
+      <div>
+        <p class="fact-label">Herramienta</p>
+        <p class="fact-value">Power BI</p>
+      </div>
+      <div>
+        <p class="fact-label">Cobertura</p>
+        <p class="fact-value">23 departamentos</p>
+      </div>
+      <div>
+        <p class="fact-label">Fuente</p>
+        <p class="fact-value">ENACOM · Censo</p>
+      </div>
+      <div>
+        <p class="fact-label">Índice propio</p>
+        <p class="fact-value">IBDD</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="embed-frame wrap">
+  <iframe
+    title="Dashboard Brecha Digital en Salta"
+    src="https://app.powerbi.com/view?r=eyJrIjoiMTk3ZDUxNzctZjdmOS00OGVjLWJkMzYtMjNmZTE2M2ZmYTdhIiwidCI6ImZkM2FmZTllLTY0OGYtNDcxYy1iYTFmLTlmODhjZGI1MDc3ZCIsImMiOjR9"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<div class="notes wrap">
+  <h2>Por qué este tema</h2>
+  <p>Salta tiene una brecha digital que casi nunca se ve en los promedios provinciales. Un departamento puede tener buena velocidad de conexión promedio y, al mismo tiempo, la mayoría de sus hogares sin acceso a internet. Quise construir algo que mostrara esa distancia entre el dato agregado y la realidad territorial.</p>
+
+  <h2>El hallazgo del 2265</h2>
+  <p>Al reconstruir el modelo de datos, encontré valores centinela — <strong>2265 y 51</strong> — escondidos en los datos de velocidad de ENACOM. No eran mediciones reales: eran placeholders que, al promediarse junto con los datos válidos, inflaban artificialmente la velocidad promedio de departamentos enteros. Los excluí explícitamente en una medida separada (<strong>Velocidad_Prom_Corregida</strong>) para no repetir ese error.</p>
+
+  <h2>El índice IBDD</h2>
+  <p>Para medir la brecha de forma más completa que "cuánta gente tiene internet", construí el <strong>Índice de Brecha Digital Departamental</strong>: 40% déficit de acceso, 25% vulnerabilidad móvil, 20% déficit de velocidad, 15% informalidad tecnológica. Un número por departamento que resume cuatro dimensiones distintas de la brecha, no solo una.</p>
+
+  <h2>La paradoja de Rivadavia</h2>
+  <p>El hallazgo que más me interesó: Rivadavia muestra una velocidad promedio decente, pero <strong>84,5% de sus hogares no tienen acceso a internet en absoluto</strong>. La velocidad "buena" corresponde a un puñado de conexiones, no a la experiencia real del departamento. Es el ejemplo más claro de por qué un promedio solo, sin desagregar, puede esconder la brecha en vez de mostrarla.</p>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    Salta, Argentina
+  </div>
+</footer>
+
+</body>
+</html>
